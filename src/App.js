@@ -4,9 +4,12 @@ import Form from './Form'
 import Order from './Order'
 
 class App extends Component {
-  state: {
-    orders: []
-  }
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      orders: []
+    }}
 
   addOrder = (order) => {
     this.setState({
