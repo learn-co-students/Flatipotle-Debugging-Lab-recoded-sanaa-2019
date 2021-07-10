@@ -16,7 +16,7 @@ class Form extends Component {
     ...DEFAULT_STATE
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
     event.preventDefault()
     document.getElementById("order-form").reset()
     this.props.addOrder(this.state)
