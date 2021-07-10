@@ -4,9 +4,15 @@ import Form from './Form'
 import Order from './Order'
 
 class App extends Component {
-  state: {
-    orders: []
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      orders: []
+    }
   }
+
+
 
   addOrder = (order) => {
     this.setState({
@@ -15,14 +21,14 @@ class App extends Component {
   }
 
   render() {
-    const orders = this.state.orders.map( (order, idx) => {
+    const orders = this.state.orders.map((order, idx) => {
       <Order key={idx} {...order} />
     })
 
     return (
       <div className="App">
         <header className="App-header">
-          <img src={ require('./images/logo.png') } className="App-logo" alt="logo" />
+          <img src={require('./images/logo.png')} className="App-logo" alt="logo" />
         </header>
 
         <Form />
@@ -30,7 +36,7 @@ class App extends Component {
         <div className="ui raised container segment">
           <h1 className="ui block header">All Orders</h1>
           <div className="ui three cards">
-            { orders }
+            {orders}
           </div>
         </div>
       </div>
